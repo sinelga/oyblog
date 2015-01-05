@@ -13,11 +13,10 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'ui.router'
-  ]).config(function($stateProvider,$urlRouterProvider){
+  ]).config(function($stateProvider,$urlRouterProvider,$locationProvider){
   $stateProvider.state('main',{
 	  url: '/',
 	  controller:'MainCtrl',
@@ -26,24 +25,28 @@ angular
 		  url: '/about',
 		  controller:'AboutCtrl',
 		  templateUrl:'views/about.html'
+	  }).state('tarinat',{
+		  url: '/q',
+		  controller:'TarinatCtrl',
+		  templateUrl:'views/tarinat.html'
 	  });
+  
+  
+  
   $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode(false).hashPrefix('!');  	
   
-  
-//  .config(function ($routeProvider) {
-//    $routeProvider
-//      .when('/', {
-//        templateUrl: 'views/main.html',
-//        controller: 'MainCtrl'
-//      })
-//      .when('/about', {
-//        templateUrl: 'views/about.html',
-//        controller: 'AboutCtrl'
-//      })
-//      .otherwise({
-//        redirectTo: '/'
-//      });
-    
-       
-    
-  });
+           
+  }).run(function($rootScope) {
+	  
+	  $rootScope.htmlReady = function(page) {
+          $rootScope.$evalAsync(function() { // fire after $digest
+              setTimeout(function() { // fire after DOM rendering
+                  if (typeof window.callPhantom === 'function') { 
+                      window.callPhantom({hello: page });
+                  }
+              }, 0);
+          });
+      };
+	
+	});

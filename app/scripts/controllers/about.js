@@ -10,10 +10,12 @@
 angular.module('oyblogApp')
   .controller('AboutCtrl', function ($scope,$state) {
 	  
-	  $state.go('about', {}); 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+	  $state.go('about', {});
+	  
+//	  if (typeof window.callPhantom === 'function') {
+//		  window.callPhantom({ hello: 'about' });
+//	  }
+	  $scope.htmlReady('about');
+	  
+
   });

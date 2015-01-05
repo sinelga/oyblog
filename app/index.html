@@ -13,6 +13,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <meta name='fragment' content='!' />
+    <base href='/'>	
   </head>
   <body ng-app="oyblogApp">
     <!--[if lt IE 7]>
@@ -26,6 +28,7 @@
           <li class="active"><a ui-sref="main">Home</a></li>
           <li><a ui-sref="about">About</a></li>
           <li><a ui-sref="main">Contact</a></li>
+          <li><a ui-sref="tarinat">Tarinat</a></li>
         </ul>
         <h3 class="text-muted">oyblog</h3>
       </div>
@@ -75,7 +78,6 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -86,6 +88,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/tarinat.js"></script>
+        <script src="scripts/services/freeparagraph.js"></script>
         <!-- endbuild -->
 </body>
 </html>

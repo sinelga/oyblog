@@ -10,10 +10,27 @@
 angular.module('oyblogApp')
   .controller('MainCtrl', function ($scope,$state) {
 	  
-	  $state.go('main', {});
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+	  $state.go('main', {
+		  		  
+	  });
+	  
+//	  $timeout(function() {
+		  
+		  $scope.htmlReady('main');
+		  
+//		  if (typeof window.callPhantom === 'function') {
+//			  window.callPhantom({ hello: 'main' });
+//			}
+		  		  
+		  
+//	  }, 100);
+	  
+	 
+//	  $rootScope.$on('$renderStaticReady', function() {
+//		    $window.$renderStaticReady = true;
+//		  });
+//	  $rootScope.$on('$routeChangeBegin', function() {
+//		    $window.$renderStaticReady = false;
+//		  });
+	  
   });
