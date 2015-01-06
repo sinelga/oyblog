@@ -2,23 +2,27 @@
 
 /**
  * @ngdoc service
- * @name 0FiFipornoDeskApp.Jsonpservice
+ * @name oyblogApp.jsonpservice
  * @description
- * # Jsonpservice
- * Service in the 0FiFipornoDeskApp.
+ * # jsonpservice
+ * Service in the oyblogApp.
  */
-angular.module('0FiFipornoDeskApp')
+angular.module('oyblogApp')
   .service('jsonpService', function ($http) {
+
 	  	  
 	  return {
 	  	  
 	  getJSONP: function(url) {
 	  	  
-	  		return $http.jsonp(url).success(function(data){
-
-	  			return data;
-		  	
-	  		});
+	  		
+			  return $http.get(url,{cache:true}).then(function(response){
+  				  
+				  return response.data;				  
+				  
+				  				  
+			  });
+	  		
 	  
 	  	}
 	  	  	  

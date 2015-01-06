@@ -32,6 +32,41 @@
         </ul>
         <h3 class="text-muted">oyblog</h3>
       </div>
+      
+            <div class='header'>
+      
+        
+        <div ng-controller='MenuCtrl'>
+        		
+        		        
+              <ul ng-if="menuOK" class='nav nav-pills pull-right'>
+          		<li class='active'><a ng-href='#!/'>Home</a></li>          
+          
+            	<li role="presentation" class="dropdown">
+    			<a class="dropdown-toggle" data-toggle="dropdown" ng-href="#!/" role="button" aria-expanded="true">&nbsp;&nbsp; Seksi Tarinat &nbsp;&nbsp; <span class="caret"></span></a>
+   			 	<ul class="dropdown-menu" role="menu">
+    
+           		<div  ng-repeat="menuobj in data.data">
+        
+        			<li><a ng-href="#!/q?otsikko={{menuobj.Keyword}}&aihe={{menuobj.Phrase}}">{{menuobj.Phrase}}</a></li>
+          			
+         		</div>
+      
+    			</ul>
+  				</li>
+          
+          
+        </ul>
+                
+        
+        </div> 
+               
+                
+      </div>
+      
+      
+      
+      
 
  	<div ui-view></div>
 
@@ -39,18 +74,6 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -90,6 +113,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/tarinat.js"></script>
         <script src="scripts/services/freeparagraph.js"></script>
+        <script src="scripts/controllers/menu.js"></script>
+        <script src="scripts/services/jsonpservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>
