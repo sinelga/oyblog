@@ -8,23 +8,23 @@
  * Controller of the oyblogApp
  */
 angular.module('oyblogApp')
-  .controller('TarinatCtrl', function ($scope,$state,freeparagraph) {
+  .controller('TarinatCtrl', function ($scope,$rootScope,$state,freeparagraph) {
 	  
-	  $state.go('tarinat', {});
-
+	  $state.go('tarinat', function () {
+		  
+		  console.log('tarinat');
+		  
+	  });
+	  
+	  $scope.newTarinaOK = false;
+	  
+	  
 	  $scope.getParagraph = function() {
 		 
 		  freeparagraph.getParagraph().then(function(data) {
-			  
-			  
+			  			  
 			  $scope.weatherDescription = data;
-//			  $scope.$emit('$renderStaticReady');
-			  $scope.htmlReady('tarinat');
-			  
-//			  if (typeof window.callPhantom === 'function') {
-//				  window.callPhantom({ hello: 'tarinat' });
-//			  }
-			  
+			  $scope.newTarinaOK = true;	  
 			  
 		  },function() {
 			  $scope.weatherDescription = 'Could not obtain data';
@@ -33,6 +33,12 @@ angular.module('oyblogApp')
 	  
 	  $scope.getParagraph();
 	  
+	  $rootScope.$on('menuClick', function(event,data) {
+		  $scope.newTarinaOK = false;
+		  console.log(data);
+		  $scope.getParagraph();
+	  	
+	  });
 	  
 
   });

@@ -13,7 +13,7 @@ angular.module('oyblogApp')
 	  return {
 		  getParagraph : function() {
 			  			  			  
-			  return $http.get('http://104.131.99.251/freeparagraph',{cache:true}).then(function(response){
+			  return $http.get('http://104.131.99.251/freeparagraph').then(function(response){
 								  				  
 				  return response.data;				  
 				  

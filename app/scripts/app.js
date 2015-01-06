@@ -15,6 +15,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
+    'uuid',
     'ui.router'
   ]).config(function($stateProvider,$urlRouterProvider,$locationProvider){
   $stateProvider.state('main',{
@@ -26,11 +27,11 @@ angular
 		  controller:'AboutCtrl',
 		  templateUrl:'views/about.html'
 	  }).state('tarinat',{
-		  url: '/q',
+//		  url: '/q?&otsikko&aihe',
+		  url: '/q/:otsikko/:aihe',
 		  controller:'TarinatCtrl',
 		  templateUrl:'views/tarinat.html'
 	  });
-  
   
   
   $urlRouterProvider.otherwise('/');

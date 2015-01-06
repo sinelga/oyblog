@@ -9,25 +9,29 @@
  */
 angular.module('oyblogApp')
   .service('jsonpService', function ($http) {
-
+	  
+	  	
 	  	  
-	  return {
-	  	  
-	  getJSONP: function(url) {
+	  this.getJSON = function(url) {
 	  	  
 	  		
 			  return $http.get(url,{cache:true}).then(function(response){
   				  
 				  return response.data;				  
-				  
-				  				  
+				  				  				  
 			  });
-	  		
+	  			  
+	  	}
+	  
+	  this.getJSONP= function(url) {
+	  	  
+	  		return $http.jsonp(url).success(function(response){
+
+	  			return response;
+		  	
+	  		});
 	  
 	  	}
-	  	  	  
 	  
-	  };
-	  	  	  
-	  
+	  	  	  	  
   });

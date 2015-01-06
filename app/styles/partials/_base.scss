@@ -1,0 +1,97 @@
+@import "variables";
+
+body {
+   
+  font-family: 'Finger Paint',cursive;
+  text-shadow: 1px 1px 1px #aaa;
+ /* color: blue;*/
+  margin: 10px;
+ /* font-size: 100%;*/
+  
+}
+
+
+.redbg {
+  /* font-family: 'Finger Paint', cursive; */
+  background-color: $red;
+  /* width: 20%; */
+}
+
+.bigphone {
+  font-size: 300%;
+  text-shadow: 4px 4px 4px #aaa;
+  color: red;
+}
+.bigspinner {
+  
+ /* font-family: 'Permanent Marker', cursive;*/
+  
+  text-shadow: 4px 4px 4px #aaa;
+ /* width: 70%; */
+ font-size: 170%;
+  width: 50%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.centered {
+ position: fixed;
+ /*   position: relative; */
+  top: 12%;
+  left: 26%; 
+ /*  width: 80%; */
+}
+
+.bigcharacternameage {
+  font-size: 240%;
+  text-shadow: 3px 3px 3px #aaa;  
+}
+
+.bigcity {
+	
+	  font-size: 140%;  
+	
+}
+
+.marginetop10 {
+	
+	margin-top: 10px;
+}
+
+.marginetop20 {
+	
+	margin-top: 20px;
+	
+}
+
+.showAnswer {
+	color: red;
+	
+}
+
+ .uusipalvelu {
+   	margin-top: 20px;
+    color: red;
+    }
+    
+ .showPayNumber{
+      font-size: 240%;
+  		text-shadow: 3px 3px 3px #aaa;
+  		color: red;  
+ }
+ 
+ .mediablock {
+ 
+ 	display: table;
+ 
+ }
+ 
+ .medialistbackground {
+ 
+ 	background-color: red;
+ 	max-width: 300px;
+ 	
+ }
+ 
+
+ 
