@@ -19,7 +19,6 @@ angular.module('oyblogApp')
 	  jsonpService.getJSONP('http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=JSON_CALLBACK').then(function (data){
 		  
 	  	  $scope.characters =data.data;
-	  	  console.log(data.data );
 	  	  $scope.selectedCharacter =data.data[data.data.length -1];
 	  	  $scope.loadOK = true;
 	  	  $scope.widget = {title: 'Hei '+data.data[data.data.length -1].name+'!'};
@@ -120,6 +119,5 @@ angular.module('oyblogApp')
 		  	  
 	  };  
 		  
-
 	  
   });

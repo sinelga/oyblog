@@ -19,6 +19,18 @@ angular.module('oyblogApp')
     };
   });
 
+angular.module('oyblogApp')
+.filter('convert_url_to_string', function () {
+  return function (input) {
+  	
+//  	return input.toLowerCase().replace(/s+/g, '-').replace(/[^a-z0-9-]/ig,'');
+      return decodeURI(input);     
+         
+    
+  };
+});
+
+
 angular.module('oyblogApp').filter('thumb_w110shadow6_bff0000',
 		function() {
 

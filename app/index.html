@@ -41,15 +41,15 @@
         <div ng-controller='MenuCtrl'>
         		       		        		        
               <ul ng-if="menuOK" class='nav nav-pills pull-right'>
-          		<li class='active'><a ng-click='menuClick()' ui-sref='main'>Home</a></li>          
+          		<li class='active'><a  ui-sref='main'>Home</a></li>          
           
             	<li role="presentation" class="dropdown">
-    			<a class="dropdown-toggle" data-toggle="dropdown" ng-href="#!/" role="button" aria-expanded="true">&nbsp;&nbsp; Seksi Tarinat &nbsp;&nbsp; <span class="caret"></span></a>
+    			<a class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-expanded="true">&nbsp;&nbsp; Seksi Tarinat &nbsp;&nbsp; <span class="caret"></span></a>
    			 	<ul class="dropdown-menu" role="menu">
     
-           		<div  ng-repeat="menuobj in data"  ng-click='menuClick(menuobj)'>
+           		<div  ng-repeat="menuobj in data" >
         
- 						<li><a  ui-sref="tarinat({otsikko:'{{menuobj.Keyword | convert_to_url}}',aihe:'{{menuobj.Phrase | convert_to_url}}'})">{{menuobj.Phrase}}</a></li>
+ 						<li><a ui-sref="tarinat({otsikko:'{{menuobj.Keyword | convert_to_url}}',aihe:'{{menuobj.Phrase | convert_to_url}}'})">{{menuobj.Phrase}}</a></li>
           			
          		</div>
       
@@ -90,7 +90,6 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
