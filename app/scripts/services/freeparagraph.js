@@ -8,7 +8,7 @@
  * Factory in the oyblogApp.
  */
 angular.module('oyblogApp')
-  .factory('freeparagraph', function ($http) {
+  .factory('freeparagraph', function ($http,$location) {
 
 	  return {
 		  getParagraph : function(stateParams) {
@@ -17,7 +17,7 @@ angular.module('oyblogApp')
 			  console.log(path);
 			  
 			  			  			  
-			  return $http.get('http://104.236.64.229/paragraph?menupath='+path).then(function(response){
+			  return $http.get('http://'+$location.host()+'/paragraph?menupath='+path).then(function(response){
 								  				  
 				  return response.data;				  
 				  
