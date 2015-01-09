@@ -17,7 +17,7 @@ angular.module('oyblogApp')
 			  console.log(path);
 			  
 			  			  			  
-			  return $http.get('/paragraph?menupath='+path).then(function(response){
+			  return $http.get('http://104.236.64.229/paragraph?menupath='+path).then(function(response){
 								  				  
 				  return response.data;				  
 				  

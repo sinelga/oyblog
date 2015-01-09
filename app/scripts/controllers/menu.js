@@ -12,7 +12,7 @@ angular.module('oyblogApp')
 	  
 	$scope.menuOK =false; 
 
-	jsonpService.getJSON('/menu?quant=2').then(function (data){
+	jsonpService.getJSON('http://104.236.64.229/menu?quant=2').then(function (data){
 				
 		$scope.data = data;
 		$scope.menuOK =true; 

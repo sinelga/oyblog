@@ -27,7 +27,6 @@ angular
 		  controller:'AboutCtrl',
 		  templateUrl:'views/about.html'
 	  }).state('tarinat',{
-//		  url: '/q?&otsikko&aihe',
 		  url: '/q/:otsikko/:aihe',
 		  controller:'TarinatCtrl',
 		  templateUrl:'views/tarinat.html'
