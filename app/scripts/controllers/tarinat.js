@@ -10,7 +10,7 @@
 angular.module('oyblogApp')
   .controller('TarinatCtrl', function ($scope,$rootScope,$state,$stateParams,$timeout,freeparagraph) {
 
-		  freeparagraph.getParagraph().then(function(data) {
+		  freeparagraph.getParagraph($stateParams).then(function(data) {
 			  			  
 				$scope.loadTarina = true;							
 				$scope.data = data;
@@ -27,17 +27,14 @@ angular.module('oyblogApp')
 	 
 		
 		if (angular.element('#FI').length) {
-		
-//			$timeout.cancel(returnonmain);	
 			
 			var timer =	$timeout(function() {
+				
+				$rootScope.$broadcast('closeMenu')
 				$state.go('main', {});
 				
-//				$scope.loadTarina = false;
-//				$location.path('/').search('');
 				
-				
-			}, 10000);
+			}, 60000);
 		
 								
 		}

@@ -10,7 +10,6 @@
 angular.module('oyblogApp')
   .service('jsonpService', function ($http) {
 	  
-	  	
 	  	  
 	  this.getJSON = function(url) {
 	  	  

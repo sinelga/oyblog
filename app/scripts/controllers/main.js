@@ -8,13 +8,11 @@
  * Controller of the oyblogApp
  */
 angular.module('oyblogApp')
-  .controller('MainCtrl', function ($scope,$state,$http,rfc4122,jsonpService) {
+  .controller('MainCtrl', function ($scope,$rootScope,$state,$http,$timeout,rfc4122,jsonpService) {
 	  
 	  $scope.payable = true;
 	  $scope.showPayButton = true;
 	  var uuid = rfc4122.v4();
-	  
-	  $state.go('main', {});
 	  
 	  jsonpService.getJSONP('http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=JSON_CALLBACK').then(function (data){
 		  
@@ -22,20 +20,16 @@ angular.module('oyblogApp')
 	  	  $scope.selectedCharacter =data.data[data.data.length -1];
 	  	  $scope.loadOK = true;
 	  	  $scope.widget = {title: 'Hei '+data.data[data.data.length -1].name+'!'};
-	  	  $scope.widget2 ='';
-//	  	  
+	  	  $scope.widget2 ='';	  	  
 	  	  $scope.htmlReady();		  
 		  
 	  });	  
 	  
-	  
-
 	  		  
 	  $scope.selectCharacter = function(character) {
 			
 			$scope.selectedCharacter=character;
-			$scope.widget = {title: 'Hei '+character.name+'!'};
-			
+			$scope.widget = {title: 'Hei '+character.name+'!'};			
 			$scope.showPayButton =true;
 			
 		};
@@ -117,7 +111,19 @@ angular.module('oyblogApp')
 		        });
 		    }, 1000);
 		  	  
-	  };  
-		  
+	  }; 
+	  
+	  
+		if (angular.element('#FI').length) {
+			
+			var timer =	$timeout(function() {
+				
+				$rootScope.$broadcast('closeMenu')
+				
+				
+			}, 60000);
+		
+								
+		}		  
 	  
   });

@@ -11,9 +11,13 @@ angular.module('oyblogApp')
   .factory('freeparagraph', function ($http) {
 
 	  return {
-		  getParagraph : function() {
+		  getParagraph : function(stateParams) {
+			  
+			  var path = stateParams.otsikko+"/"+stateParams.aihe;
+			  console.log(path);
+			  
 			  			  			  
-			  return $http.get('http://104.131.99.251/freeparagraph').then(function(response){
+			  return $http.get('/paragraph?menupath='+path).then(function(response){
 								  				  
 				  return response.data;				  
 				  

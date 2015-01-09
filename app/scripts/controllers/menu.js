@@ -12,21 +12,18 @@ angular.module('oyblogApp')
 	  
 	$scope.menuOK =false; 
 
-	jsonpService.getJSON('http://104.131.99.251/keywords?quant=10').then(function (data){
+	jsonpService.getJSON('/menu?quant=2').then(function (data){
 				
 		$scope.data = data;
 		$scope.menuOK =true; 
 								
 	});
-    
-	
-	 $scope.menuClick = function(menuObj) {
-		 
-		 
-		 $rootScope.$broadcast('menuClick',menuObj)
-			
-		};
-	
-	
+    	
+	$rootScope.$on('closeMenu', function(event) {
+		
+		$scope.menuOK =false; 
+		
+	})
+		
     
   });
