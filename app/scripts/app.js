@@ -10,11 +10,11 @@
  */
 angular
   .module('oyblogApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngTouch',
+//    'ngAnimate',
+//    'ngCookies',
+//    'ngResource',
+//    'ngSanitize',
+//    'ngTouch',
     'uuid',
     'ui.router'
   ]).config(function($stateProvider,$urlRouterProvider,$locationProvider){
@@ -22,31 +22,37 @@ angular
 	  url: '/',
 	  controller:'MainCtrl',
 	  templateUrl:'views/main.html'
-	  }).state('about',{
-		  url: '/about',
-		  controller:'AboutCtrl',
-		  templateUrl:'views/about.html'
-	  }).state('tarinat',{
-		  url: '/q/:otsikko/:aihe',
-		  controller:'TarinatCtrl',
-		  templateUrl:'views/tarinat.html'
 	  });
+  
+//  
+//  ).state('about',{
+//		  url: '/about',
+//		  controller:'AboutCtrl',
+//		  templateUrl:'views/about.html'
+//	  }).state('tarinat',{
+//		  url: '/q/:otsikko/:aihe',
+//		  controller:'TarinatCtrl',
+//		  templateUrl:'views/tarinat.html'
+//	  });
   
   
   $urlRouterProvider.otherwise('/');
-  $locationProvider.html5Mode(false).hashPrefix('!');  	
+//  $locationProvider.html5Mode(false).hashPrefix('!');
+  $locationProvider.html5Mode(true)
   
            
-  }).run(function($rootScope) {
-	  
-	  $rootScope.htmlReady = function(page) {
-          $rootScope.$evalAsync(function() { // fire after $digest
-              setTimeout(function() { // fire after DOM rendering
-                  if (typeof window.callPhantom === 'function') { 
-                      window.callPhantom({hello: page });
-                  }
-              }, 0);
-          });
-      };
-	
-	});
+  });
+  
+//  .run(function($rootScope) {
+//	  
+//	  $rootScope.htmlReady = function(page) {
+//          $rootScope.$evalAsync(function() { // fire after $digest
+//              setTimeout(function() { // fire after DOM rendering
+//                  if (typeof window.callPhantom === 'function') { 
+//                      window.callPhantom({hello: page });
+//                  }
+//              }, 0);
+//          });
+//      };
+//	
+//	});

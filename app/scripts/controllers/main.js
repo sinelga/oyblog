@@ -21,7 +21,7 @@ angular.module('oyblogApp')
 	  	  $scope.loadOK = true;
 	  	  $scope.widget = {title: 'Hei '+data.data[data.data.length -1].name+'!'};
 	  	  $scope.widget2 ='';	  	  
-	  	  $scope.htmlReady();		  
+//	  	  $scope.htmlReady();		  
 		  
 	  });	  
 	  

@@ -12,18 +12,18 @@ angular.module('oyblogApp')
 	  
 	$scope.menuOK =false; 
 
-	jsonpService.getJSON('http://'+$location.host()+'/menu?quant=10').then(function (data){
-				
-		$scope.data = data;
-		$scope.menuOK =true; 
-								
-	});
-    	
-	$rootScope.$on('closeMenu', function(event) {
-		
-		$scope.menuOK =false; 
-		
-	})
+//	jsonpService.getJSON('http://'+$location.host()+'/menu?quant=10').then(function (data){
+//				
+//		$scope.data = data;
+//		$scope.menuOK =true; 
+//								
+//	});
+//    	
+//	$rootScope.$on('closeMenu', function(event) {
+//		
+//		$scope.menuOK =false; 
+//		
+//	})
 		
     
   });
